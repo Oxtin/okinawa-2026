@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="description" content="沖繩 5 天 4 夜旅行計畫：景點、交通、住宿與餐廳安排。">
+  <title>沖繩 5天4夜｜旅行報告</title>
+  <style>
+    :root {
+      --ink: #17323b;
+      --muted: #637980;
+      --teal: #0f766e;
+      --teal-dark: #115e59;
+      --mint: #e8f7f3;
+      --sand: #fff8ed;
+      --coral: #e9775c;
+      --line: #dce9e7;
+      --white: #ffffff;
+      --shadow: 0 12px 30px rgba(24, 62, 67, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #f7fbfa;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: var(--teal-dark); }
+    .hero {
+      padding: 38px 20px 30px;
+      color: var(--white);
+      background: linear-gradient(140deg, #0d5f62 0%, #0f766e 58%, #22a88d 100%);
+    }
+    .hero-inner, main { width: min(100% - 32px, 980px); margin: 0 auto; }
+    .eyebrow { margin: 0 0 8px; color: #bdf1e4; font-size: .82rem; font-weight: 800; letter-spacing: .14em; }
+    h1 { margin: 0; font-size: clamp(2rem, 8vw, 4.2rem); line-height: 1.1; letter-spacing: -.04em; }
+    .subtitle { margin: 15px 0 0; color: #e5fffa; font-size: 1rem; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .pill { display: inline-flex; align-items: center; padding: 6px 11px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; color: #fff; background: rgba(255,255,255,.13); font-size: .82rem; }
+    .nav-wrap { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.94); backdrop-filter: blur(10px); }
+    .nav { display: flex; gap: 7px; overflow-x: auto; width: min(100% - 24px, 980px); margin: auto; padding: 10px 0; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { flex: 0 0 auto; padding: 6px 11px; border-radius: 999px; color: var(--teal-dark); text-decoration: none; font-size: .82rem; font-weight: 800; background: var(--mint); }
+    main { padding: 24px 0 56px; }
+    .intro { display: grid; gap: 12px; margin-bottom: 22px; }
+    .notice { padding: 16px 17px; border-left: 4px solid var(--coral); border-radius: 12px; background: var(--sand); box-shadow: var(--shadow); }
+    .section-title { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin: 30px 0 13px; }
+    h2 { margin: 0; font-size: 1.45rem; line-height: 1.25; }
+    h3 { margin: 0; font-size: 1.08rem; }
+    .section-kicker { margin: 0; color: var(--muted); font-size: .82rem; }
+    .day-card, .restaurant-card { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--white); box-shadow: var(--shadow); }
+    .day-card + .day-card { margin-top: 18px; }
+    .day-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; padding: 20px; color: #fff; background: linear-gradient(115deg, var(--teal-dark), var(--teal)); }
+    .day-head p { margin: 4px 0 0; color: #d8fff6; font-size: .86rem; }
+    .day-number { flex: 0 0 auto; padding: 6px 10px; border-radius: 10px; color: var(--teal-dark); background: #d7fff3; font-size: .8rem; font-weight: 900; }
+    .day-body { padding: 7px 18px 19px; }
+    .timeline { list-style: none; padding: 0; margin: 0; }
+    .timeline li { display: grid; grid-template-columns: 104px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid #edf3f2; }
+    .timeline li:last-child { border-bottom: 0; }
+    .time { color: var(--teal-dark); font-size: .86rem; font-weight: 900; }
+    .item-note { display: block; margin-top: 3px; color: var(--muted); font-size: .88rem; }
+    .food-box { margin: 14px 0 5px; padding: 14px; border-radius: 13px; background: var(--mint); }
+    .food-box.alt { background: #f5f8f7; }
+    .food-box p { margin: 4px 0 0; color: #426168; font-size: .9rem; }
+    .food-label { display: inline-block; margin-bottom: 3px; padding: 2px 7px; border-radius: 5px; color: #fff; background: var(--coral); font-size: .72rem; font-weight: 900; }
+    .restaurant-list { display: grid; gap: 10px; }
+    .restaurant-card { padding: 14px; box-shadow: none; }
+    .restaurant-top { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
+    .score { flex: 0 0 auto; padding: 3px 8px; border-radius: 7px; color: #8b4b1f; background: #fff0cf; font-weight: 900; font-size: .82rem; }
+    .restaurant-type { margin: 4px 0 0; color: var(--muted); font-size: .88rem; }
+    .restaurant-when { margin: 8px 0 0; color: var(--teal-dark); font-size: .82rem; font-weight: 800; }
+    .footer { margin-top: 32px; padding: 20px; border-radius: 16px; color: #49676c; background: #edf7f5; font-size: .86rem; }
+    @media (min-width: 700px) {
+      .hero { padding: 64px 24px 52px; }
+      main { padding-top: 34px; }
+      .intro { grid-template-columns: 1fr 1fr; align-items: stretch; }
+      .timeline li { grid-template-columns: 130px 1fr; }
+      .restaurant-list { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">OKINAWA TRAVEL REPORT</p>
+      <h1>沖繩 5天4夜</h1>
+      <p class="subtitle">景點、交通、住宿與餐廳完整規劃</p>
+      <div class="hero-meta">
+        <span class="pill">11/18（三）— 11/22（日）</span>
+        <span class="pill">那霸・恩納・本島北部</span>
+        <span class="pill">租車＋單軌＋計程車</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="行程導覽">
+      <a href="#day1">Day 1</a><a href="#day2">Day 2</a><a href="#day3">Day 3</a><a href="#day4">Day 4</a><a href="#day5">Day 5</a><a href="#restaurants">餐廳排名</a>
+    </nav>
+  </div>
+
+  <main>
+    <section id="day1" class="day-card">
+      <div class="day-head"><div><h2>Day 1｜抵達那霸・國際通</h2><p>11/18（三）｜住宿：琉球 ORION Hotel</p></div><span class="day-number">01</span></div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li><span class="time">17:50</span><span>抵達那霸機場</span></li>
+          <li><span class="time">18:40～19:15</span><span>領行李、搭單軌電車至牧志站</span></li>
+          <li><span class="time">19:25</span><span>入住琉球 ORION Hotel</span></li>
+          <li><span class="time">19:45～</span><span>國際通逛街、晚餐、買水果</span></li>
+        </ul>
+        <div class="food-box"><span class="food-label">晚餐主選</span><h3>旬菜処びいどろ <span class="score">3.88</span></h3><p>沖繩料理、近海海鮮、縣產蔬菜、創作料理。</p></div>
+        <div class="food-box alt"><strong>晚餐備選（依分數）</strong><p>地料理・旬菜 土香る 3.77 ・ しゃぶしゃぶ金武 本店 3.75 ・ OKINAWA SOBA EIBUN 3.67 ・ しゃぶしゃぶ 朝陽屋 3.62 ・ 沖縄食堂じまんや 3.56</p></div>
+        <span class="item-note">交通：機場至牧志站約 15～16 分鐘；牧志站步行至飯店約 3～5 分鐘。</span>
+      </div>
+    </section>
+
+    <section id="day2" class="day-card">
+      <div class="day-head"><div><h2>Day 2｜PARCO CITY・美國村・恩納村</h2><p>11/19（四）｜住宿：URUUMI ONNA POOL VILLA</p></div><span class="day-number">02</span></div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li><span class="time">10:00</span><span>飯店退房</span></li>
+          <li><span class="time">10:00～10:15</span><span>搭單軌至 Omoromachi 站</span></li>
+          <li><span class="time">10:30</span><span>DFS 取車</span></li>
+          <li><span class="time">11:00～11:30</span><span>開車前往 PARCO CITY</span></li>
+          <li><span class="time">11:30～14:00</span><span>PARCO CITY 午餐、逛街、超市採買</span></li>
+          <li><span class="time">14:00～14:30</span><span>開車前往美國村</span></li>
+          <li><span class="time">14:30～17:30</span><span>美國村散步、拍照</span></li>
+          <li><span class="time">17:30～19:30</span><span>燒肉琉球之牛 北谷店 <strong>（目前已確定）</strong></span></li>
+          <li><span class="time">19:30～20:15</span><span>開車前往恩納村 Villa</span></li>
+          <li><span class="time">20:15</span><span>入住 URUUMI ONNA POOL VILLA</span></li>
+        </ul>
+        <div class="food-box alt"><span class="food-label">下午茶備選</span><h3>ブルーシール 牧港本店 <span class="score">3.54</span></h3><p>沖繩冰淇淋、甜點、咖啡、漢堡。列入 PARCO CITY 餐飲時段備選，不另增行程時間。</p></div>
+        <span class="item-note">開車時間：DFS→PARCO CITY 約 20～25 分鐘；PARCO CITY→美國村約 20～25 分鐘；美國村→Villa 約 35～40 分鐘。</span>
+      </div>
+    </section>
+
+    <section id="day3" class="day-card">
+      <div class="day-head"><div><h2>Day 3｜萬座毛・古宇利島・美麗海水族館</h2><p>11/20（五）｜住宿：URUUMI ONNA POOL VILLA</p></div><span class="day-number">03</span></div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li><span class="time">10:00</span><span>Villa 出發</span></li>
+          <li><span class="time">10:10～10:50</span><span>萬座毛</span></li>
+          <li><span class="time">10:50～11:45</span><span>開車前往古宇利島</span></li>
+          <li><span class="time">11:45～13:00</span><span>古宇利蝦蝦飯午餐、古宇利大橋</span></li>
+          <li><span class="time">13:00～13:35</span><span>開車前往美麗海水族館</span></li>
+          <li><span class="time">13:35～17:15</span><span>美麗海水族館（15:00 海豚秀、17:00 餵食解說）</span></li>
+          <li><span class="time">17:15～18:05</span><span>開車前往 Ocean Boo!</span></li>
+          <li><span class="time">18:30～20:00</span><span>Ocean Boo! 阿古豬涮涮鍋</span></li>
+          <li><span class="time">20:00～20:10</span><span>開車回 Villa</span></li>
+        </ul>
+        <div class="food-box alt"><span class="food-label">北部餐廳備選</span><h3>早午餐／晚餐替換名單</h3><p>きしもと食堂 3.68（傳統木灰沖繩麵） ・ やんばるダイニング 松の古民家 3.71（阿古豬涮涮鍋、島野菜） ・ 鐵板燒 朝日 3.66（牛排、鐵板燒） ・ キャプテンカンガルータコライス 3.46（塔可飯）。</p></div>
+        <span class="item-note">開車時間：Villa→萬座毛約 10 分鐘；萬座毛→古宇利島約 50～55 分鐘；古宇利島→水族館約 30～35 分鐘；水族館→Ocean Boo! 約 40～50 分鐘。</span>
+      </div>
+    </section>
+
+    <section id="day4" class="day-card">
+      <div class="day-head"><div><h2>Day 4｜退車・波上宮・沖繩麵・首里城</h2><p>11/21（六）｜住宿：大和 Roynet Hotel 那霸 Omoromachi PREMIER</p></div><span class="day-number">04</span></div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li><span class="time">10:00</span><span>Villa 退房、出發</span></li>
+          <li><span class="time">10:00～12:30</span><span>開車返回那霸（含加油、交通緩衝）</span></li>
+          <li><span class="time">13:00</span><span>DFS 還車</span></li>
+          <li><span class="time">13:05～13:30</span><span>步行至大和 Roynet Hotel，寄放行李</span></li>
+          <li><span class="time">13:30～14:15</span><span>午餐：OKINAWA SOBA EIBUN（Tabelog 3.67）</span></li>
+          <li><span class="time">14:15～14:35</span><span>搭計程車前往波上宮</span></li>
+          <li><span class="time">14:35～15:35</span><span>波上宮參拜、周邊散步</span></li>
+          <li><span class="time">15:35～16:15</span><span>前往首里站／首里城方向</span></li>
+          <li><span class="time">16:15～17:30</span><span>首里城周邊散步、休息</span></li>
+          <li><span class="time">17:30～18:30</span><span>步行參觀首里城周邊</span></li>
+          <li><span class="time">19:00～20:15</span><span>首里城夜間點燈、龍潭周邊</span></li>
+          <li><span class="time">20:15～20:45</span><span>搭單軌返回 Omoromachi 站</span></li>
+          <li><span class="time">20:45～</span><span>飯店附近晚餐、休息</span></li>
+        </ul>
+        <div class="food-box"><span class="food-label">午餐主選</span><h3>OKINAWA SOBA EIBUN <span class="score">3.67</span></h3><p>沖繩麵、創作沖繩麵、じゅーしー；營業時間參考 11:00～20:00，售罄可能提早結束。</p></div>
+        <div class="food-box alt"><span class="food-label">晚餐主選</span><h3>地料理・旬菜 土香る <span class="score">3.77</span></h3><p>高級沖繩料理、縣產海鮮、炭火料理、豚しゃぶ。</p><p><strong>晚餐備選：</strong>旬菜処びいどろ 3.88 ・ しゃぶしゃぶ金武 本店 3.75 ・ しゃぶしゃぶ朝陽屋 3.62 ・ SHIKAKU 3.56 ・ 沖縄食堂じまんや 3.56。</p></div>
+        <span class="item-note">本日已取消瀨長島，改為波上宮前午餐並提前安排首里城。</span>
+      </div>
+    </section>
+
+    <section id="day5" class="day-card">
+      <div class="day-head"><div><h2>Day 5｜回程</h2><p>11/22（日）</p></div><span class="day-number">05</span></div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li><span class="time">10:00</span><span>飯店退房</span></li>
+          <li><span class="time">10:05～10:12</span><span>步行至 Omoromachi 站</span></li>
+          <li><span class="time">約 10:15</span><span>搭單軌前往那霸機場</span></li>
+          <li><span class="time">約 10:35～10:40</span><span>抵達機場</span></li>
+          <li><span class="time">13:35</span><span>樂桃航空起飛</span></li>
+        </ul>
+        <span class="item-note">交通：Omoromachi 站至那霸機場，單軌約 20～25 分鐘。</span>
+      </div>
+    </section>
+
+    <section id="restaurants">
+      <div class="section-title"><div><h2>餐廳排名</h2><p class="section-kicker">Tabelog 分數｜由高至低</p></div></div>
+      <div class="restaurant-list">
+        <article class="restaurant-card"><div class="restaurant-top"><h3>旬菜処びいどろ</h3><span class="score">3.88</span></div><p class="restaurant-type">沖繩料理、近海海鮮、創作料理</p><p class="restaurant-when">Day 1 晚餐主選／Day 4 晚餐備選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>地料理・旬菜 土香る</h3><span class="score">3.77</span></div><p class="restaurant-type">高級沖繩料理、豚しゃぶ、炭火料理</p><p class="restaurant-when">Day 1 備選／Day 4 晚餐主選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>しゃぶしゃぶ金武 本店</h3><span class="score">3.75</span></div><p class="restaurant-type">阿古豬涮涮鍋、島野菜</p><p class="restaurant-when">Day 1、Day 4 晚餐備選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>やんばるダイニング 松の古民家</h3><span class="score">3.71</span></div><p class="restaurant-type">阿古豬涮涮鍋、島野菜</p><p class="restaurant-when">Day 3 北部晚餐備選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>きしもと食堂</h3><span class="score">3.68</span></div><p class="restaurant-type">傳統木灰沖繩麵</p><p class="restaurant-when">Day 3 北部午餐備選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>OKINAWA SOBA EIBUN</h3><span class="score">3.67</span></div><p class="restaurant-type">沖繩麵、創作沖繩麵</p><p class="restaurant-when">Day 4 午餐主選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>鐵板燒 朝日</h3><span class="score">3.66</span></div><p class="restaurant-type">牛排、鐵板燒</p><p class="restaurant-when">Day 3 北部晚餐備選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>しゃぶしゃぶ 朝陽屋</h3><span class="score">3.62</span></div><p class="restaurant-type">阿古豬涮涮鍋、沖繩料理</p><p class="restaurant-when">Day 1、Day 4 晚餐備選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>SHIKAKU</h3><span class="score">3.56</span></div><p class="restaurant-type">和食、沖繩料理、阿古豬涮涮鍋</p><p class="restaurant-when">Day 4 晚餐備選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>沖縄食堂じまんや</h3><span class="score">3.56</span></div><p class="restaurant-type">沖繩料理、居酒屋、鳳梨豬涮涮鍋</p><p class="restaurant-when">Day 1、Day 4 晚餐備選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>ブルーシール 牧港本店</h3><span class="score">3.54</span></div><p class="restaurant-type">冰淇淋、甜點、咖啡、漢堡</p><p class="restaurant-when">Day 2 下午茶備選</p></article>
+        <article class="restaurant-card"><div class="restaurant-top"><h3>キャプテンカンガルータコライス</h3><span class="score">3.46</span></div><p class="restaurant-type">塔可飯、墨西哥風料理</p><p class="restaurant-when">Day 3 北部午餐備選</p></article>
+      </div>
+    </section>
+
+    <div class="footer">提醒：熱門餐廳、沖繩麵店與涮涮鍋店可能需要提前預約；營業時間、售罄狀況與交通時間請於出發前再次確認。</div>
+  </main>
+</body>
+</html>
